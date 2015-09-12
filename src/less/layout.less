@@ -50,32 +50,26 @@ ________________________________________________________________________________
 
 .content {
     display: block;
-    padding: 0 @base-padding-horizontal;
+    padding: @base-padding-vertical @base-padding-horizontal;
 }
 
 /* media queries
 ________________________________________________________________________________*/
 
-@media @xs {
-    .content {
-        padding: 0 @xs-padding-horizontal;
-    }
-}
-
 @media @tablet {
     .content {
-        padding: 0 @tablet-padding-horizontal;
+        padding: @tablet-padding-vertical @tablet-padding-horizontal;
     }
 }
 
 @media @desktop {
     .content {
-        padding: 0 @desktop-padding-horizontal;
+        padding: @desktop-padding-vertical @desktop-padding-horizontal;
     }
 }
 
 @media @desktop-large {
     .content {
-        padding: 0 @desktop-large-padding-horizontal;
+        padding: @desktop-large-padding-vertical @desktop-large-padding-horizontal;
     }
 }

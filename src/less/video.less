@@ -25,6 +25,12 @@
     right: 5%;
 }
 
+.controls__pause--light {
+    .controls__pause;
+
+    color: lighten(@color-controls, 20%)
+}
+
 @media @xs {
     .controls__text--text {
         display: none;
@@ -33,9 +39,9 @@
 
 @media @tablet {
     .controls__content {
-        background: rgba(255, 255, 255, 0.38);
+        background: rgba(255, 255, 255, 0.2);
         padding-top: 5px;
-        box-shadow: 2px -2px 16px #222;
+        box-shadow: 3px -3px 16px rgba(0, 0, 0, 0.5);
     }
 
     .controls__play:before,

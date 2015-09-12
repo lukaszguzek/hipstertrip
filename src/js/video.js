@@ -3,7 +3,7 @@
     var headerVideo = document.getElementById('header-video'),
     format = 'video/mp4',
     playButton = document.getElementsByClassName('controls__play')[0],
-    pauseButton = document.getElementsByClassName('controls__pause')[0],
+    pauseButton = document.getElementsByClassName('controls__pause--light')[0],
     playingNow = false;
 
     if (canPlayTest(headerVideo, format)) {
