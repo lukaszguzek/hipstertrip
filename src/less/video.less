@@ -1,0 +1,59 @@
+.video-wrap {
+    position: relative;
+}
+
+.controls__content {
+    position: absolute;
+    z-index: 30;
+    top: 50%;
+    left: 50%;
+    padding: @base-padding-horizontal;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.controls__play:before,
+.controls__pause:before {
+    color: @color-controls;
+    font-size: 70px;
+    display: inline;
+}
+
+.controls__pause {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+}
+
+@media @xs {
+    .controls__text--text {
+        display: none;
+    }
+}
+
+@media @tablet {
+    .controls__content {
+        background: rgba(255, 255, 255, 0.38);
+        padding-top: 5px;
+        box-shadow: 2px -2px 16px #222;
+    }
+
+    .controls__play:before,
+    .controls_pause:before {
+        font-size: 90px;
+    }
+}
+
+@media @desktop {
+    .controls__play:before,
+    .controls_pause:before {
+        font-size: 110px;
+    }
+}
+
+@media @desktop-large {
+    .controls__play:before,
+    .controls_pause:before {
+        font-size: 130px;
+    }
+}

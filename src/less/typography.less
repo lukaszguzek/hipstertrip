@@ -1,0 +1,79 @@
+html, body {
+    font-family: @base-font-family;
+    font-size: @base-font-size;
+    line-height: 1.313;
+    color: @base-color-font;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: @secondary-font-family;
+    line-height: 1.2;
+}
+
+h1, h2 {
+    font-weight: 400;
+}
+
+h3, h4, h5, h6 {
+    font-weight: 300;
+}
+
+h1 {
+    font-size: @base-font-size * 3 - 6px;
+}
+
+h2 {
+    font-size: @base-font-size * 2 - 6px;
+}
+
+h3 {
+    font-size: @base-font-size * 1.618 - 6px;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+.controls__text--header,
+.controls__text--text {
+    text-shadow: 2px 2px 2px #000;
+}
+
+.controls__text--header {
+    text-transform: uppercase;
+}
+
+
+@media @tablet {
+    html, body {
+        font-size: 14px;
+    }
+    
+    h1 {
+    font-size: @base-font-size * 3 - 2px;
+    }
+
+    h2 {
+        font-size: @base-font-size * 2 - 2px;
+    }
+
+    h3 {
+        font-size: @base-font-size * 1.618 - 2px;
+    }
+}
+
+@media @desktop {
+    h1 {
+    font-size: @base-font-size * 3;
+    }
+
+    h2 {
+        font-size: @base-font-size * 2;
+    }
+
+    h3 {
+        font-size: @base-font-size * 1.618;
+    }
+}

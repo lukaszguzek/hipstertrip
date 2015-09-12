@@ -1,0 +1,218 @@
+.menu-horizontal {
+    margin: 0;
+    font-family: @secondary-font-family;
+    font-weight: 300;
+    font-size: 0;
+    text-align: center;
+}
+
+.menu-horizontal__item {
+    display: inline-block;
+    padding: @base-padding-vertical @base-padding-horizontal;
+    font-size: 0;
+}
+
+.menu-horizontal__link,
+.menu-horizontal__link:visited, 
+.menu-horizontal__link:hover {
+    color: @base-color-font;
+    text-decoration: none;
+    text-decoration: none;
+}
+
+/* statusbar menu
+________________________________________________________________________________*/
+.statusbar-menu__item {
+    &:hover {
+        background-color: lighten(@color-header__background, 10%);
+        text-decoration: underline;
+        transition: all 0.6s ease;
+    }
+}
+.statusbar-menu__link {
+    font-size: @base-font-size;
+    font-weight: 300;
+}
+
+/* main navigation
+________________________________________________________________________________*/
+
+/* text-logo */
+.text-logo {
+    margin: 0 0 0 @base-padding-horizontal;
+    line-height: @main-menu-height - 20px;
+}
+
+.text-logo__link
+.text-logo__link:hover,
+.text-logo__link:visited {
+    text-decoration: none;
+}
+
+.text-logo--bold {
+    font-weight: 700;
+}
+
+/* main menu
+________________________________________________________________________________*/
+.main-nav {
+    background-image: url('../img/header-background.jpg');
+    position: relative;
+}
+
+.main-menu {
+    transition: height 1s ease;
+    position: absolute;
+    z-index: 50;
+    top: 100% + 1px;
+    width: 100%;
+    height: 0;
+}
+
+.main-menu--collapsed {
+    display: none;
+    height: 0;
+}
+
+.main-menu__item {
+    background-color: @color-header__background;
+    font-size: 0;
+    display: block;
+    width: 100%;
+    padding: @padding-mobile-menu @base-padding-horizontal;
+    text-align: center;
+    border-bottom: 1px solid @header-border;
+
+    &:hover {
+        background-color: lighten(@color-header__background, 10%);
+    }
+}
+
+.main-menu__link {
+    font-size: @base-font-size + 4px;
+    font-weight: 300;
+}
+
+.nav-form__wrap {
+   float: none;
+   display: inline-block;
+}
+
+.nav-form {
+    font-size: @base-font-size + 4px;
+    padding: @base-padding-vertical 0;
+}
+
+.hamburger-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: @base-padding-horizontal;
+    z-index: 10;
+    font-size: 32px;
+    color: @base-color-font;
+    cursor: pointer;
+}
+
+
+/* media queries
+________________________________________________________________________________*/
+
+@media @xs {
+    .statusbar-menu {
+        text-align: center;
+    }
+    .statusbar-menu__item {
+        padding: @xs-padding-vertical @xs-padding-horizontal;
+    }
+}
+
+@media @tablet {
+    .statusbar-menu__item {
+        padding: @tablet-padding-vertical @tablet-padding-horizontal;
+    }
+    .text-logo {
+        margin-left: @tablet-padding-vertical;
+    }
+
+    .hamburger-button {
+        right: @tablet-padding-vertical;
+    }
+}
+
+@media @desktop {
+    .menu-horizontal,
+    .statusbar-menu {
+        text-align: right;
+    }
+
+    .text-logo {
+        line-height: @main-menu-height;
+        margin-left: @desktop-padding-vertical;
+    }
+    
+    .main-menu {
+            display: block;
+            position: static;
+            width: 100%;
+            text-align: center;
+            background-color: transparent;
+        }
+
+    .main-menu__item--wrap {
+        background-color: transparent;
+        display: inline-block;
+        font-size: 0;
+        max-height: @main-menu-height;
+        border-bottom: 4px solid transparent;
+        transition: all 0.6s ease;
+
+        &:hover {
+            border-bottom: 4px solid @base-color-action--light;
+        }
+    }
+
+    .main-menu__item {
+        display: inline;
+        width: auto;
+        padding: 0 @desktop-padding-horizontal;
+        text-align: center;
+        border: none;
+
+        &:hover {
+            background-color: none;
+        }
+    }
+
+    .main-menu__link {
+        display: inline-block;
+        font-size: @base-font-size + 8px;
+        font-weight: 300;
+        line-height: @main-menu-height;
+    }
+    .nav-form__wrap {
+        display: block;
+        float: right;
+        margin-right: @desktop-padding-horizontal + 5px;
+        padding: 0 0;
+    }
+    
+    .nav-form {
+        font-size: @base-font-size + 4px;
+        line-height: @main-menu-height;
+    }
+
+    .hamburger-button {
+        display: none;
+    }
+
+}
+
+@media @desktop-large {
+    .text-logo {
+        margin-left: @desktop-large-padding-vertical;
+    }    
+    .hamburger-button {
+        right: @desktop-large-padding-vertical;
+    }
+}
