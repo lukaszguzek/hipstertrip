@@ -1,0 +1,40 @@
+.offers-list {
+    .list-horizontal;
+
+    width: 100%;
+    boder: 1px solid red;
+
+}
+
+.offer__wrap {
+    max-width: 1640px;
+    margin: 0 auto;
+    padding: @base-padding-vertical @base-padding-horizontal;
+
+    @media @tablet {
+        padding: @tablet-padding-vertical @tablet-padding-horizontal;
+    }
+
+    @media @desktop {
+        padding: @desktop-padding-vertical @desktop-padding-horizontal;
+    }
+
+    @media @desktop-large {
+        padding: @desktop-large-padding-vertical @desktop-large-padding-horizontal;
+    }
+}
+
+.offer__icons {
+    columns: 2;
+    text-align: center;
+    letter-spacing: 0;
+}
+
+
+.offers-list__item {
+    .list-horizontal__item;
+
+    &:nth-child(2n) {
+        background-color: @color-background-zebra;
+    }
+}

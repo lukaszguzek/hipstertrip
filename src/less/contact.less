@@ -1,21 +1,10 @@
 .contact {
     position: relative;
-    padding: @base-padding-vertical * 2 @base-padding-horizontal;
-
-    @media @tablet {
-        padding: @tablet-padding-vertical * 2@tablet-padding-horizontal;
-    }
-
-    @media @desktop {
-        padding: @desktop-padding-vertical * 2 @desktop-padding-horizontal;;
-    }
-
-    @media @desktop-large {
-        padding: @desktop-large-padding-vertical * 2 @desktop-large-padding-horizontal;
-    }
+    .padding--double;
 }
 
 .contact__container {
+    .padding;
     background-color: @color-contact__form-background;
     margin: 0 auto;
     position: relative;
@@ -26,16 +15,25 @@
     }
 }
 
+.contact__header {
+    .padding--vertical;
+}
+
 .contact__data {
     @media @desktop {
         padding-right: @base-padding-horizontal;
     }
 }
 .contact-data-list {
+    .text;
     .list-no-decoration;
     margin-top: @base-padding-vertical;
 
 }
+.contact-data__item {
+    .text;
+}
+
 .contact-data__addres {
     &:nth-child(2) {
         margin-bottom: 20px;

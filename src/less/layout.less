@@ -48,27 +48,202 @@ ________________________________________________________________________________
     text-align: right;
 } 
 
-.content {
-    padding: @base-padding-vertical @base-padding-horizontal;
+/* content padding */
+
+.padding--vertical--small {
+    padding-top: @base-padding-vertical;
+    padding-bottom: @base-padding-vertical;
 }
 
-/* media queries
-________________________________________________________________________________*/
+.padding--vertical {
+    padding-top: @base-padding-vertical;
+    padding-bottom: @base-padding-vertical;
 
-@media @tablet {
-    .content {
-        padding: @tablet-padding-vertical @tablet-padding-horizontal;
+    @media @xs {
+        padding-top: @xs-padding-vertical;
+        padding-bottom: @xs-padding-vertical;        
+    }
+
+    @media @tablet {
+        padding-top: @tablet-padding-vertical;
+        padding-bottom: @tablet-padding-vertical;
+    }
+
+    @media @desktop {
+        padding-top: @desktop-padding-vertical;
+        padding-bottom: @desktop-padding-vertical;
+    }
+
+    @media @desktop-large {
+        padding-top: @desktop-large-padding-vertical;
+        padding-bottom: @desktop-large-padding-vertical;        
     }
 }
 
-@media @desktop {
-    .content {
-        padding: @desktop-padding-vertical @desktop-padding-horizontal;
+.padding--vertical--double {
+    padding-top: @base-padding-vertical * 2;
+    padding-bottom: @base-padding-vertical * 2;
+
+    @media @xs {
+        padding-top: @xs-padding-vertical * 2;
+        padding-bottom: @xs-padding-vertical * 2;        
+    }
+
+    @media @tablet {
+        padding-top: @tablet-padding-vertical * 2;
+        padding-bottom: @tablet-padding-vertical * 2;
+    }
+
+    @media @desktop {
+        padding-top: @desktop-padding-vertical * 2;
+        padding-bottom: @desktop-padding-vertical * 2;
+    }
+
+    @media @desktop-large {
+        padding-top: @desktop-large-padding-vertical * 2;
+        padding-bottom: @desktop-large-padding-vertical * 2;        
     }
 }
 
-@media @desktop-large {
-    .content {
-        padding: @desktop-large-padding-vertical @desktop-large-padding-horizontal;
+.padding--horizontal {
+    padding-left: @base-padding-horizontal;
+    padding-right: @base-padding-horizontal;
+
+    @media @xs {
+        padding-left: @xs-padding-horizontal;
+        padding-right: @xs-padding-horizontal;        
     }
+
+    @media @tablet {
+        padding-left: @tablet-padding-horizontal;
+        padding-right: @tablet-padding-horizontal;
+    }
+
+    @media @desktop {
+        padding-left: @desktop-padding-horizontal;
+        padding-right: @desktop-padding-horizontal;
+    }
+
+    @media @desktop-large {
+        padding-left: @desktop-large-padding-horizontal;
+        padding-right: @desktop-large-padding-horizontal;        
+    }
+}
+.padding--horizontal--double {
+    padding-left: @base-padding-horizontal * 2;
+    padding-right: @base-padding-horizontal * 2;
+
+    @media @xs {
+        padding-left: @xs-padding-horizontal * 2;
+        padding-right: @xs-padding-horizontal * 2;        
+    }
+
+    @media @tablet {
+        padding-left: @tablet-padding-horizontal * 2;
+        padding-right: @tablet-padding-horizontal * 2;
+    }
+
+    @media @desktop {
+        padding-left: @desktop-padding-horizontal * 2;
+        padding-right: @desktop-padding-horizontal * 2;
+    }
+
+    @media @desktop-large {
+        padding-left: @desktop-large-padding-horizontal * 2;
+        padding-right: @desktop-large-padding-horizontal * 2;        
+    }
+}
+
+.padding--horizontal--small {
+   padding-left: @base-padding-horizontal;
+   padding-right: @base-padding-horizontal;
+}
+
+
+
+.padding {
+    .padding--vertical;
+    .padding--horizontal;
+}
+
+.padding--double {
+    .padding--vertical--double;
+    .padding--horizontal--double;   
+}
+
+.margin--horizontal {
+    margin-left: @base-padding-horizontal;
+    margin-right: @base-padding-horizontal;
+
+    @media @tablet {
+        margin-left: @tablet-padding-horizontal;
+        margin-right: @tablet-padding-horizontal;
+    }
+    @media @desktop {
+        margin-left: @desktop-padding-horizontal;
+        margin-right: @desktop-padding-horizontal;
+    }
+    @media @desktop-large {
+        margin-left: @desktop-large-padding-horizontal;
+        margin-right: @desktop-large-padding-horizontal;
+    }
+}
+
+.margin--vertical {
+    margin-top: @base-padding-vertical;
+    margin-bottom: @base-padding-vertical;
+
+    @media @xs {
+        margin-top: @xs-padding-horizontal;
+        margin-bottom: @xs-padding-horizontal;        
+    }
+
+    @media @tablet {
+        margin-top: @tablet-padding-horizontal;
+        margin-bottom: @tablet-padding-horizontal;
+    }
+
+    @media @desktop {
+        margin-top: @desktop-padding-horizontal;
+        margin-bottom: @desktop-padding-horizontal;
+    }
+
+    @media @desktop-large {
+        margin-top: @desktop-large-padding-horizontal;
+        margin-bottom: @desktop-large-padding-horizontal;        
+    }
+}
+
+
+/* menus */
+.menu-horizontal {
+    .padding--horizontal;
+    
+
+    margin: 0;
+    font-family: @secondary-font-family;
+    font-weight: 300;
+    text-align: center;
+    padding-left: 0;
+}
+
+.menu-horizontal__item {
+    .padding--horizontal--small;
+    .text;
+    
+    font-family: @secondary-font-family;
+    font-weight: 300;
+    display: inline-block;
+}
+
+.menu-horizontal__link,
+.menu-horizontal__link:visited, 
+.menu-horizontal__link:hover {
+    .text;
+    color: @base-color-font;
+
+    line-height: 2.5em;
+    color: inherit;        
+    text-decoration: none;
+    text-decoration: none;
 }

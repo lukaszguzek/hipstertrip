@@ -1,45 +1,74 @@
-.text {
-    color: @base-color-font;
-}
-
 .text--inversed {
     color: darken(@base-color-font, 98%);
 }
 
 html, body {
     font-family: @base-font-family;
-    font-size: @base-font-size;
+    font-size: @font-size-p;
     line-height: 1.313;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: @secondary-font-family;
-    line-height: 1.2;
-    margin: 0;
-}
+html, 
+body,
+.text {
+    font-family: @base-font-family;
+    font-size: 16px;
+    line-height: 1.5;
+    color: @base-color-font;
 
-h1, h2 {
-    font-weight: 400;
-}
+    h1 ,h2, h3, h4, h5, h6 {
+        font-family: @secondary-font-family;
+    }
 
-h3, h4, h5, h6 {
-    font-weight: 300;
-}
+    h1, h2 {
+        font-weight: 400;
+    }
 
-h1 {
-    font-size: @base-font-size * 3 - 6px;
-}
+    h3, h4, h5, h6 {
+        font-weight: 300;
+    }
 
-h2 {
-    font-size: @base-font-size * 2 - 6px;
-}
+    h1 {
+        font-size: 2.31em;
+        margin: 0;
+    }
 
-h3 {
-    font-size: @base-font-size * 1.618 - 6px;
-}
+    h2 {
+        font-size: 1.44em;
+        margin: 0;
+    }
 
-p {
-    text-indent: 30px;
+    h3 {
+        font-size: 1.13em;
+        margin: 0;
+    }
+
+    h4 {
+        font-size: 1em;
+    }
+
+    p {
+        font-size: 0.875em;
+        margin: 0;
+        text-indent: 2em;
+    }
+
+    li {
+        font-size: 0.875em;
+    }
+    
+    .quote__text { 
+        font-family: @secondary-font-family;
+        font-style: italic;
+        font-size: 2.31em;
+        line-height: 1.2;
+        font-weight: 300;
+        text-indent: 0;
+    }
+
+    a, a:visited {
+        color: inherit;
+    }
 }
 
 .controls__text--header,
@@ -49,37 +78,4 @@ p {
 
 .controls__text--header {
     text-transform: uppercase;
-}
-
-
-@media @tablet {
-    html, body {
-        font-size: 14px;
-    }
-    
-    h1 {
-    font-size: @base-font-size * 3 - 2px;
-    }
-
-    h2 {
-        font-size: @base-font-size * 2 - 2px;
-    }
-
-    h3 {
-        font-size: @base-font-size * 1.618 - 2px;
-    }
-}
-
-@media @desktop {
-    h1 {
-    font-size: @base-font-size * 3;
-    }
-
-    h2 {
-        font-size: @base-font-size * 2;
-    }
-
-    h3 {
-        font-size: @base-font-size * 1.618;
-    }
 }

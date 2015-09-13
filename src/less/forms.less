@@ -8,7 +8,6 @@ textarea {
     outline: none;
     box-shadow: inset 2px 2px 16px rgba(0, 0, 0, 0.3);
     font-family: @secondary-font-family;
-    font-size: @base-font-size;
     padding: @base-padding-vertical @desktop-padding-horizontal;
     font-weight: 300;
     transition: all 0.6s ease;
@@ -35,6 +34,7 @@ input.nav-form__searchbox {
     background-color: @color-input__background--dark;
     border: 1px solid @header-border;
     text-align: center;
+    margin-bottom: 0;
 
     &:focus {
         background-color: lighten(@color-input__background--dark, 5%);

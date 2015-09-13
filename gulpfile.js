@@ -12,7 +12,8 @@ var gulp = require('gulp'),
     srcCss = './src/css/',
     srcJs = './src/js/',
     srcHtml = './src/*.html',
-    targetHtml = './app/',
+    appFolder = './app/',
+    appHtml = './app/',
     targetCss = './app/css/',
     targetJs = './app/js';
 
@@ -23,8 +24,8 @@ gulp.task('cleanHtml', function () {
 
 gulp.task('buildHtml', ['cleanHtml'], function () {
     return gulp.src(srcHtml)
-        .pipe(gulp.dest(targetHtml))
-        .pipe(sync.stream())
+        .pipe(gulp.dest(appHtml))
+        .pipe(sync.stream());
 })
 
 gulp.task('cleanCss', function () {
@@ -71,6 +72,6 @@ gulp.task('watch', function () {
 
 
     gulp.watch('./src/less/*.less', ['buildCss']);
-    gulp.watch('./src/*.html', ['buildHtml']);
+    gulp.watch(srcHtml, ['buildHtml']);
     gulp.watch('./src/js/*.js', ['buildJs']);
 });

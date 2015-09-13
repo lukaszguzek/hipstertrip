@@ -10,11 +10,18 @@
 }
 
 .link__readmore {
+    .padding--vertical--double;
+    
     text-decoration: underline;
     display: inline-block;
     width: 100%;
     text-align: right;
     color: @base-color-action;
+    transition: color 0.6s ease;
+
+    &:hover {
+        color: @base-color-action--light;
+    }
 }
 
 .list-horizontal {
@@ -25,7 +32,6 @@
 }
 
 .list-horizontal__item {
-    font-size: @base-font-size;
 }
 
 

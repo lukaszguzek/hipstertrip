@@ -14,19 +14,19 @@
     <link rel="stylesheet" type="text/css" href="./css/main.css">
  </head> 
   <body class="text">
-    <section class="pure-g content statusbar">
+    <section class="pure-g statusbar">
       <nav class="pure-u-1-1">
-          <ul class="menu-horizontal statusbar-menu">
-            <li class="menu-horizontal__item statusbar-menu__item">
-              <a href="#" class="menu-horizontal__link statusbar-menu__link">Zarejestruj się</a>
+          <ul class="statusbar__menu">
+            <li class="statusbar-menu__item">
+              <a href="#" class="statusbar-menu__link">Zarejestruj się</a>
             </li>
-            <li class="menu-horizontal__item statusbar-menu__item">
-              <a href="#" class="menu-horizontal__link statusbar-menu__link">
+            <li class="statusbar-menu__item">
+              <a href="#" class="statusbar-menu__link">
                 <span class="fa fa-unlock icon"></span>Zaloguj się
               </a>
             </li>
-            <li class="menu-horizontal__item statusbar-menu__item">
-              <a href="#" class="menu-horizontal__link statusbar-menu__link"><span class="fa fa-facebook icon"></span>Połącz przez FB</a>
+            <li class="statusbar-menu__item">
+              <a href="#" class="statusbar-menu__link"><span class="fa fa-facebook icon"></span>Połącz przez FB</a>
             </li>
           </ul>
       </nav>
@@ -34,7 +34,7 @@
 
     <section class="pure-g">
       <nav class="pure-u-1 pure-u-md-1 pure-u-lg-1 main-nav clearfix">
-        <div class="pull-right ">
+        <div class="pull-right">
           <span class="fa fa-bars hamburger-button"></span>
         </div>
         <a href="/" class="text-logo__link pull-left">
@@ -45,7 +45,7 @@
          </a>
         <ul class="menu-horizontal main-menu main-menu--collapsed">
           <div class="pure-u-1 pure-u-lg-4-24 nav-form__wrap">
-            <li class="menu-horizontal__item main-menu__item">
+            <li class="main-menu__item">
               <form action="#" method="POST" name="search-form" class="nav-form">
                 <div class="searchbox__wrap">
                   <span class="fa fa-search searchbox__icon"></span>
@@ -53,25 +53,24 @@
                 </div>
               </form>
             </li>
-            
           </div>
           <div class="main-menu__item--wrap">
-            <li class="menu-horizontal__item main-menu__item">
+            <li class="main-menu__item">
               <a href="#" class="main-menu__link">Co to jest?</a>
             </li>
           </div>
           <div class="main-menu__item--wrap">
-            <li class="menu-horizontal__item main-menu__item">
+            <li class="main-menu__item">
               <a href="#" class="main-menu__link">Aktualności</a>
             </li>
           </div>
           <div class="main-menu__item--wrap">
-            <li class="menu-horizontal__item main-menu__item">
-              <a href="#dupa" class="main-menu__link">Miejscówki</a>
+            <li class="main-menu__item">
+              <a href="/places.html" class="main-menu__link">Miejscówki</a>
             </li>
           </div>
           <div class="main-menu__item--wrap">
-            <li class="menu-horizontal__item main-menu__item">
+            <li class="main-menu__item">
               <a href="#" class="main-menu__link">Kontakt</a>
             </li>
           </div>
@@ -82,7 +81,7 @@
       <video id="header-video" src="" muted loop>
       </video>
       <img src="" alt="" class="hidden pure-img" id="video-alt-img">
-        <div class="content controls__content pure-u-1 pure-u-md-12-24 pure-u-lg-6-24">
+        <div class="controls__content pure-u-1 pure-u-md-12-24 pure-u-lg-6-24">
           <span class="controls__play icon--oversize fa fa-play-circle-o"></span>
           <h2 class="controls__text--header">Lipsum Dolor</h2>
           <p class="controls__text--text">
@@ -94,15 +93,15 @@
 
     <section class="pure-g clearfix info">
       <div class="pure-u-1 pure-u-md-1 pure-u-lg-12-24 clearfix">
-        <div class="content info__about">
-          <header>
+        <article class="info__about">
+          <header class="about__header">
             <h2>Co to jest?</h2>
           </header>
           <blockquote class="pure-u-1 pure-u-lg-12-24 clearfix info__quote">
-              <span class="fa fa-quote-right quote__icon"></span>
-              <span class="">Vivamus</span> congue elit justo. Nunc vitae venenatis tortor.
+              <p class="quote__text"><span class="fa fa-quote-right quote__icon"></span>Vivamus congue elit justo. Nunc vitae venenatis tortor.</p>
+              
               <footer class="quote__footer">
-                  <cite class="quote__cite content">Cras accumsan.</cite>
+                  <cite class="quote__cite">Cras accumsan.</cite>
               </footer>
           </blockquote>
           <p class="info-section__base-text">
@@ -112,29 +111,33 @@
               Quisque faucibus metus id fermentum dignissim. Donec condimentum sem odio, sit amet sagittis lectus tincidunt aliquam. Etiam molestie enim sed libero placerat, in luctus quam viverra. Vivamus vitae volutpat quam. Integer vitae imperdiet augue. Vestibulum elementum ex non massa iaculis, id auctor eros gravida. Cras accumsan non mi vitae egestas. Sed velit mauris, convallis in purus sed, pharetra suscipit nibh. velit nunc, ut aliquet lacus auctor eu. Quisque sagittis sem non nisi vulputate luctus.
           </p>
         <a href="#" class="link__readmore">Czytaj dalej</a>
-        </div>
+        </article>
       </div>
 
-      <div class="pure-u-1 pure-u-md-1 pure-u-lg-12-24 content info-news__wrap">
-      <div class="info-news">
-        <header>
+      <div class="pure-u-1 pure-u-md-1 pure-u-lg-12-24 info-news__wrap">
+      <div class="info__news-section">
+        <header class="news__section-header">
           <h2>Aktualności</h2>
         </header>
         <div class="pure-g">
-          <div class="pure-u-1 pure-u-lg-12-24 content">
-            <h3>Łamiąca wiadomość</h3>
-            <p class="time"><time datetime="2015-03-23 22:23">23.03.2015</time></p>
-            <p class="">
+          <article class="pure-u-1 pure-u-lg-12-24 info__news">
+            <header class="news__header">
+              <h3>Łamiąca wiadomość</h3>
+              <span class="time"><time datetime="2015-03-23 22:23">23.03.2015</time></span>
+            </header>
+            <p>
                 Morbi imperdiet, mauris rutrum feugiat ult rices, orci felis dictum justo, at dictum libero tellus quis turpis. Fusce cursus ligula in nisl dictum lacinia. Nunc tristique diam non tincidunt consectetur. Suspendisse ultricies ante ac arcu viverra faucibus. Etiam mollis, erat et rutrum dapibus, magna turpis placerat diam, at sodales sapien orci facilisis diam. Vivamus congue elit justo. Nunc vitae venenatis tortor. Vivamus rhoncus tincidunt tellus. Sed quis sem nec ex molestie accumsan. Nam sed enim sapien. 
             </p>
-            <p class="">
+            <p>
                 Quisque faucibus metus id fermentum dignissim. Donec condimentum sem odio, sit amet sagittis lectus tincidunt aliquam. Etiam molestie enim sed libero placerat, in luctus quam viverra. Vivamus vitae volutpat quam. Integer vitae imperdiet augue. Vestibulum elementum ex non massa iaculis, id auctor eros gravida. Cras accumsan non mi vitae egestas. Sed velit mauris, convallis in purus sed, pharetra suscipit nibh. velit nunc, ut aliquet lacus auctor eu. Quisque sagittis sem non nisi vulputate luctus.
             </p>
             <a href="#" class="link__readmore">Czytaj dalej...</a>
-          </div>
-          <div class="pure-u-1 pure-u-lg-12-24 content">
-            <h3 class="">Nie śpię, bo trzymam kredens</h3>
-              <p class="time"><time datetime="2015-02-28 22:23">28.02.2015</time></p>
+          </article>
+          <article class="pure-u-1 pure-u-lg-12-24 info__news">
+            <header class="news__header">
+              <h3 class="">Nie śpię, bo trzymam kredens</h3>
+              <span class="time"><time datetime="2015-02-28 22:23">28.02.2015</time></span>
+            </header>
               <p class="">
                   Morbi imperdiet, mauris rutrum feugiat ultrices, orci felis dictum justo, at dictum libero tellus quis turpis. Fusce cursus ligula in nisl dictum lacinia. Nunc tristique diam non tincidunt consectetur. Suspendisse ultricies ante ac arcu viverra faucibus. Etiam mollis, erat et rutrum dapibus, magna turpis placerat diam, at sodales sapien orci facilisis diam. Vivamus congue elit justo. 
               </p>
@@ -142,7 +145,7 @@
                   Quisque faucibus metus id fermentum dignissim. Donec condimentum sem odio, sit amet sagittis lectus tincidunt aliquam. Etiam molestie enim sed libero placerat, in luctus quam viverra. Vivamus vitae volutpat quam. Integer vitae imperdiet augue. 
               </p>
               <a href="#" class="link__readmore">Czytaj dalej...</a>
-          </div>
+          </article>
         </div>
       </div>
       </div>
@@ -152,37 +155,37 @@
     <ul class="list-horizontal places__gallery">
       <li class="pure-u-1 pure-u-md-12-24 pure-u-lg-8-24 gallery__item">
         <div class="gallery-item__info-box--wrap">
-          <div class="pure-u-22-24 pure-u-lg-12-24 info-box__content">
+          <div class="pure-u-22-24 pure-u-lg-22-24 info-box__content">
             <span class="fa fa-plus-circle icon--oversize"></span>
             <h2>Warszawa</h2>
             <p>Proin eget tempus velit. Vestibulum at lobortis augue. Aliquam scelerisque erat sed dolor interdum, id gravida quam consectetur. Quisque egestas consequat tellus. Cras metus est, accumsan at libero ac, elementum bibendum nisi. Vivamus vel laoreet orci...</p>
           </div>
         </div>
-        <img src="../img/cities/warszawa.jpg" alt="" class="pure-img">
+        <img src="../img/cities/warszawa.jpg" alt="Warszawa.jpg" class="pure-img">
         </li>
       <li class="pure-u-1 pure-u-md-12-24 pure-u-lg-8-24 gallery__item">
         <div class="gallery-item__info-box--wrap">
-          <div class="pure-u-22-24 pure-u-lg-12-24 info-box__content">
+          <div class="pure-u-22-24 pure-u-lg-22-24 info-box__content">
             <span class="fa fa-plus-circle icon--oversize"></span>
             <h2>Pojezierze Mazurskie</h2>
             <p>Proin eget tempus velit. Vestibulum at lobortis augue. Aliquam scelerisque erat sed dolor interdum, id gravida quam consectetur. Quisque egestas consequat tellus. Cras metus est, accumsan at libero ac, elementum bibendum nisi. Vivamus vel laoreet orci...</p>
           </div>
         </div>
-        <img src="../img/cities/mazury.jpg" alt="" class="pure-img">
+        <img src="../img/cities/mazury.jpg" alt="Mazury.jpg" class="pure-img">
         </li>
       <li class="pure-u-1 pure-u-md-12-24 pure-u-lg-8-24 gallery__item">
         <div class="gallery-item__info-box--wrap">
-          <div class="pure-u-22-24 pure-u-lg-12-24 info-box__content">
+          <div class="pure-u-22-24 pure-u-lg-22-24 info-box__content">
             <span class="fa fa-plus-circle icon--oversize"></span>
             <h2>Wrocław</h2>
             <p>Proin eget tempus velit. Vestibulum at lobortis augue. Aliquam scelerisque erat sed dolor interdum, id gravida quam consectetur. Quisque egestas consequat tellus. Cras metus est, accumsan at libero ac, elementum bibendum nisi. Vivamus vel laoreet orci...</p>
           </div>
         </div>
-        <img src="../img/cities/wroclaw.jpg" alt="" class="pure-img">
+        <img src="../img/cities/wroclaw.jpg" alt="Wrocław.jpg" class="pure-img">
         </li>
       <li class="pure-u-1 pure-u-md-12-24 pure-u-lg-8-24 gallery__item">
         <div class="gallery-item__info-box--wrap">
-          <div class="pure-u-22-24 pure-u-lg-12-24 info-box__content">
+          <div class="pure-u-22-24 pure-u-lg-22-24 info-box__content">
             <span class="fa fa-plus-circle icon--oversize"></span>
             <h2>Sudety</h2>
             <p>Proin eget tempus velit. Vestibulum at lobortis augue. Aliquam scelerisque erat sed dolor interdum, id gravida quam consectetur. Quisque egestas consequat tellus. Cras metus est, accumsan at libero ac, elementum bibendum nisi. Vivamus vel laoreet orci...</p>
@@ -192,17 +195,17 @@
         </li>
       <li class="pure-u-1 pure-u-md-12-24 pure-u-lg-8-24 gallery__item">
         <div class="gallery-item__info-box--wrap">
-          <div class="pure-u-22-24 pure-u-lg-12-24 info-box__content">
+          <div class="pure-u-22-24 pure-u-lg-22-24 info-box__content">
             <span class="fa fa-plus-circle icon--oversize"></span>
             <h2>Kraków</h2>
             <p>Proin eget tempus velit. Vestibulum at lobortis augue. Aliquam scelerisque erat sed dolor interdum, id gravida quam consectetur. Quisque egestas consequat tellus. Cras metus est, accumsan at libero ac, elementum bibendum nisi. Vivamus vel laoreet orci...</p>
           </div>
         </div>
-        <img src="../img/cities/krakow.jpg" alt="" class="pure-img">
+        <img src="../img/cities/krakow.jpg" alt="Kraków.jpg" class="pure-img">
         </li>
       <li class="pure-u-1 pure-u-md-12-24 pure-u-lg-8-24 gallery__item">
         <div class="gallery-item__info-box--wrap">
-          <div class="pure-u-22-24 pure-u-lg-12-24 info-box__content">
+          <div class="pure-u-22-24 pure-u-lg-22-24 info-box__content">
             <span class="fa fa-plus-circle icon--oversize"></span>
             <h2>Morze Bałtyckie</h2>
             <p>Proin eget tempus velit. Vestibulum at lobortis augue. Aliquam scelerisque erat sed dolor interdum, id gravida quam consectetur. Quisque egestas consequat tellus. Cras metus est, accumsan at libero ac, elementum bibendum nisi. Vivamus vel laoreet orci...</p>
@@ -284,8 +287,10 @@
 
     <section class="pure-g contact">
       <div class="google-map"></div>
-      <div class="pure-u-22-24 pure-u-md-20-24 pure-u-lg-12-24 content contact__container">
+      <div class="pure-u-22-24 pure-u-md-20-24 pure-u-lg-12-24 contact__container">
+          <header class="contact__header">
             <h2>Kontakt:</h2>
+          </header>
         <div class="pure-g">
           
         <div class="pure-u-1 pure-u-lg-12-24 contact__data">
@@ -293,12 +298,12 @@
               Ut imperdiet ante eros, non venenatis neque scelerisque sed. Nullam volutpat, sem eget volutpat pulvinar, enim enim consequat sem, vel sodales elit sapien vitae ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc elementum justo nec lorem feugiat dictum.
             </p>
             <ul class="list-no-decoration contact-data-list">
-                <li class="contact-data__addres">00-000 Warszawa, Polska</li>
-                <li class="contact-data__addres">ul. Przykladowa 48</li>
-                <li>Nr tel.: +48 (22) 999 88 77</li>
-                <li>Nr fax: +48 (22) 999 88 76</li>
-                <li>Nr tel. kom.: +48 999 999 999</li>
-                <li>Email: <a href="mailto:mail@example.com" class="contact-data__email">mail@example.com</a></li>
+                <li class="contact-data__item contact-data__addres">00-000 Warszawa, Polska</li>
+                <li class="contact-data__item contact-data__addres">ul. Przykladowa 48</li>
+                <li class="contact-data__item">Nr tel.: +48 (22) 999 88 77</li>
+                <li class="contact-data__item">Nr fax: +48 (22) 999 88 76</li>
+                <li class="contact-data__item">Nr tel. kom.: +48 999 999 999</li>
+                <li class="contact-data__item">Email: <a href="mailto:mail@example.com" class="contact-data__email">mail@example.com</a></p></li>
             </ul>
         </div>
         <div class="pure-u-1 pure-u-lg-12-24 contact__form-container">
@@ -329,12 +334,14 @@
           <li class="data-list__item">
             <a href="#" class="footer__link">Polityka cookies</a>
           </li>
-          <li class="data-list__item">Copyrights &copy 2015 efigence S.A.</li>
+          
+          <li class="data-list__item"><span>Copyrights &copy 2015 efigence S.A.</span></li>
+
           <li class="data-list__item list-item__social">
-            <a ref="#" class="fa fa-facebook-square"></a>
+            <a href="#" class="fa fa-facebook-square social-icon__link"></a>
           </li>
           <li class="data-list__item list-item__social">
-            <a href="#" class="fa fa-twitter-square"></a>
+            <a href="#" class="fa fa-twitter-square social-icon__link"></a>
           </li>
         </ul>
         
@@ -345,7 +352,6 @@
     </footer>
 
     <script type="text/javascript" src="./js/vendor/jquery-1.11.3.js"></script>
-    <script type="text/javascript" src="./js/vendor/handlebars-v4.0.2.js"></script>
     <script type="text/javascript" src="./js/vendor/slick.js"></script>
     <script src="http://maps.googleapis.com/maps/api/js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
