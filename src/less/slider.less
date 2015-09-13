@@ -1,0 +1,76 @@
+.slider__wrap {
+    background-image: url('../img/background-geometric.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.slider {
+    
+    padding: (@base-padding-vertical * 3) (@base-padding-horizontal);
+    margin: auto;
+    
+    @media @tablet {
+        padding: (@tablet-padding-vertical * 4) (@tablet-padding-horizontal);
+        margin-left: 50%;
+        transform: translateX(-50%); /* for carousel in FF */
+    }
+
+    @media @desktop {
+       padding: (@desktop-padding-vertical * 4) (@desktop-padding-horizontal);
+
+    }
+}
+
+.slider-container__wrap {
+    position: relative;
+}
+
+.slide {
+    padding: @base-padding-vertical @base-padding-horizontal;
+}
+
+.slide__content {
+    padding: @base-padding-vertical @base-padding-horizontal;
+    background-color: @color-footer-background;
+}
+
+.slider__arrow {
+    position: absolute;
+    z-index: 100;
+    color: rgba(225, 225, 225, 0.5);
+    font-size: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    @media @tablet {
+        font-size: 75px;
+    }
+
+    @media @desktop {
+        font-size: 100px;
+    }
+
+    @media @desktop-large {
+        font-size: 120px;
+    }
+}
+
+.slider__arrow--prev {
+    .slider__arrow;
+
+    right: 100%;
+
+    @media @desktop {
+        right: 102%;
+    }
+}
+
+.slider__arrow--next {
+    .slider__arrow;
+
+    left: 100%;
+
+    @media @desktop {
+        left: 102%;
+    }
+}

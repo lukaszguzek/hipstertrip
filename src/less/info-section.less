@@ -1,18 +1,17 @@
 .info {
     background-color: @color-footer-background;
-}
-
-.info-about__wrap {
+    background-image: url('../img/background-geometric.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url('../img/news-background.jpg');
+    margin: 0 auto;
 }
 
-
-.info__news {
+.info-news__wrap {
     background-color: @color-footer-background;
-}
+}    
 
+/* blockquote
+________________________________________________________________________________*/
 
 .info__quote {
     margin: 0 auto;
@@ -45,10 +44,10 @@
 
 @media @desktop-large {
     .info__about,
-    .info__news {
+    .info-news {
        max-width: 710px;
     }
     .info__about {
-    float: right;
+        float: right;
     }
 }

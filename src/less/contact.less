@@ -1,0 +1,93 @@
+.contact {
+    position: relative;
+    padding: @base-padding-vertical * 2 @base-padding-horizontal;
+
+    @media @tablet {
+        padding: @tablet-padding-vertical * 2@tablet-padding-horizontal;
+    }
+
+    @media @desktop {
+        padding: @desktop-padding-vertical * 2 @desktop-padding-horizontal;;
+    }
+
+    @media @desktop-large {
+        padding: @desktop-large-padding-vertical * 2 @desktop-large-padding-horizontal;
+    }
+}
+
+.contact__container {
+    background-color: @color-contact__form-background;
+    margin: 0 auto;
+    position: relative;
+
+    @media @desktop {
+        margin-right: 0;
+        margin-left: 50%;
+    }
+}
+
+.contact__data {
+    @media @desktop {
+        padding-right: @base-padding-horizontal;
+    }
+}
+.contact-data-list {
+    .list-no-decoration;
+    margin-top: @base-padding-vertical;
+
+}
+.contact-data__addres {
+    &:nth-child(2) {
+        margin-bottom: 20px;
+    }
+}
+
+.contact-data__email {
+    color: @base-color-action;
+    transition: all 0.6s ease;
+
+    &:hover {
+        color: @base-color-action--light;
+    }
+}
+
+.contact__form-container {
+    @media @desktop {
+        padding-left: @base-padding-horizontal; 
+    }
+}
+
+.contact__input {
+    .form-input;
+    
+    &:focus {
+        outline: 2px solid @base-color-action;
+    }
+}
+
+.contact-form__message {
+    height: 160px;
+
+    @media @tablet {
+        height: 180px;
+    }
+}
+
+.contact__send {
+    background-color: @base-color-action;
+
+    &:hover {
+        background-color: @base-color-action--light;
+    }
+}
+
+
+.google-map {
+    position: absolute;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}

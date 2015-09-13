@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="css/vendor/pure-grid.css">
     <link rel="stylesheet" type="text/css" href="css/vendor/icomoon.css">
     <link rel="stylesheet" type="text/css" href="./css/vendor/font-awesome-4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/vendor/slick.css">
+   <link rel="stylesheet" href="./css/vendor/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="./css/main.css">
  </head> 
-  <body>
+  <body class="text">
     <section class="pure-g content statusbar">
       <nav class="pure-u-1-1">
           <ul class="menu-horizontal statusbar-menu">
@@ -20,11 +22,11 @@
             </li>
             <li class="menu-horizontal__item statusbar-menu__item">
               <a href="#" class="menu-horizontal__link statusbar-menu__link">
-                <span class="icon-unlocked icon"></span>Zaloguj się
+                <span class="fa fa-unlock icon"></span>Zaloguj się
               </a>
             </li>
             <li class="menu-horizontal__item statusbar-menu__item">
-              <a href="#" class="menu-horizontal__link statusbar-menu__link"><span class="icon-facebook3 icon"></span>Połącz przez FB</a>
+              <a href="#" class="menu-horizontal__link statusbar-menu__link"><span class="fa fa-facebook icon"></span>Połącz przez FB</a>
             </li>
           </ul>
       </nav>
@@ -37,7 +39,7 @@
         </div>
         <a href="/" class="text-logo__link pull-left">
           <h1 class="text-logo">
-            <span class="icon-location icon"></span>
+            <span class="fa fa-map-marker icon"></span>
             <span class="text-logo--bold">Hipster</span>Trip
           </h1>
          </a>
@@ -91,11 +93,11 @@
     </section>
 
     <section class="pure-g clearfix info">
-      <div class="pure-u-1 pure-u-md-1 pure-u-lg-12-24 info-about__wrap">
+      <div class="pure-u-1 pure-u-md-1 pure-u-lg-12-24 clearfix">
         <div class="content info__about">
-          <div class="content">
+          <header>
             <h2>Co to jest?</h2>
-          </div>
+          </header>
           <blockquote class="pure-u-1 pure-u-lg-12-24 clearfix info__quote">
               <span class="fa fa-quote-right quote__icon"></span>
               <span class="">Vivamus</span> congue elit justo. Nunc vitae venenatis tortor.
@@ -113,10 +115,11 @@
         </div>
       </div>
 
-      <div class="pure-u-1 pure-u-md-1 pure-u-lg-12-24 content info__news">
-        <div class="content">
+      <div class="pure-u-1 pure-u-md-1 pure-u-lg-12-24 content info-news__wrap">
+      <div class="info-news">
+        <header>
           <h2>Aktualności</h2>
-        </div>
+        </header>
         <div class="pure-g">
           <div class="pure-u-1 pure-u-lg-12-24 content">
             <h3>Łamiąca wiadomość</h3>
@@ -142,10 +145,209 @@
           </div>
         </div>
       </div>
+      </div>
     </section>
+
+    <section class="pure-g places">
+    <ul class="list-horizontal places__gallery">
+      <li class="pure-u-1 pure-u-md-12-24 pure-u-lg-8-24 gallery__item">
+        <div class="gallery-item__info-box--wrap">
+          <div class="pure-u-22-24 pure-u-lg-12-24 info-box__content">
+            <span class="fa fa-plus-circle icon--oversize"></span>
+            <h2>Warszawa</h2>
+            <p>Proin eget tempus velit. Vestibulum at lobortis augue. Aliquam scelerisque erat sed dolor interdum, id gravida quam consectetur. Quisque egestas consequat tellus. Cras metus est, accumsan at libero ac, elementum bibendum nisi. Vivamus vel laoreet orci...</p>
+          </div>
+        </div>
+        <img src="../img/cities/warszawa.jpg" alt="" class="pure-img">
+        </li>
+      <li class="pure-u-1 pure-u-md-12-24 pure-u-lg-8-24 gallery__item">
+        <div class="gallery-item__info-box--wrap">
+          <div class="pure-u-22-24 pure-u-lg-12-24 info-box__content">
+            <span class="fa fa-plus-circle icon--oversize"></span>
+            <h2>Pojezierze Mazurskie</h2>
+            <p>Proin eget tempus velit. Vestibulum at lobortis augue. Aliquam scelerisque erat sed dolor interdum, id gravida quam consectetur. Quisque egestas consequat tellus. Cras metus est, accumsan at libero ac, elementum bibendum nisi. Vivamus vel laoreet orci...</p>
+          </div>
+        </div>
+        <img src="../img/cities/mazury.jpg" alt="" class="pure-img">
+        </li>
+      <li class="pure-u-1 pure-u-md-12-24 pure-u-lg-8-24 gallery__item">
+        <div class="gallery-item__info-box--wrap">
+          <div class="pure-u-22-24 pure-u-lg-12-24 info-box__content">
+            <span class="fa fa-plus-circle icon--oversize"></span>
+            <h2>Wrocław</h2>
+            <p>Proin eget tempus velit. Vestibulum at lobortis augue. Aliquam scelerisque erat sed dolor interdum, id gravida quam consectetur. Quisque egestas consequat tellus. Cras metus est, accumsan at libero ac, elementum bibendum nisi. Vivamus vel laoreet orci...</p>
+          </div>
+        </div>
+        <img src="../img/cities/wroclaw.jpg" alt="" class="pure-img">
+        </li>
+      <li class="pure-u-1 pure-u-md-12-24 pure-u-lg-8-24 gallery__item">
+        <div class="gallery-item__info-box--wrap">
+          <div class="pure-u-22-24 pure-u-lg-12-24 info-box__content">
+            <span class="fa fa-plus-circle icon--oversize"></span>
+            <h2>Sudety</h2>
+            <p>Proin eget tempus velit. Vestibulum at lobortis augue. Aliquam scelerisque erat sed dolor interdum, id gravida quam consectetur. Quisque egestas consequat tellus. Cras metus est, accumsan at libero ac, elementum bibendum nisi. Vivamus vel laoreet orci...</p>
+          </div>
+        </div>
+        <img src="../img/cities/bledne-skaly.jpg" alt="" class="pure-img">
+        </li>
+      <li class="pure-u-1 pure-u-md-12-24 pure-u-lg-8-24 gallery__item">
+        <div class="gallery-item__info-box--wrap">
+          <div class="pure-u-22-24 pure-u-lg-12-24 info-box__content">
+            <span class="fa fa-plus-circle icon--oversize"></span>
+            <h2>Kraków</h2>
+            <p>Proin eget tempus velit. Vestibulum at lobortis augue. Aliquam scelerisque erat sed dolor interdum, id gravida quam consectetur. Quisque egestas consequat tellus. Cras metus est, accumsan at libero ac, elementum bibendum nisi. Vivamus vel laoreet orci...</p>
+          </div>
+        </div>
+        <img src="../img/cities/krakow.jpg" alt="" class="pure-img">
+        </li>
+      <li class="pure-u-1 pure-u-md-12-24 pure-u-lg-8-24 gallery__item">
+        <div class="gallery-item__info-box--wrap">
+          <div class="pure-u-22-24 pure-u-lg-12-24 info-box__content">
+            <span class="fa fa-plus-circle icon--oversize"></span>
+            <h2>Morze Bałtyckie</h2>
+            <p>Proin eget tempus velit. Vestibulum at lobortis augue. Aliquam scelerisque erat sed dolor interdum, id gravida quam consectetur. Quisque egestas consequat tellus. Cras metus est, accumsan at libero ac, elementum bibendum nisi. Vivamus vel laoreet orci...</p>
+          </div>
+        </div>
+        <img src="../img/cities/morze.jpg" alt="" class="pure-img">
+        </li>
+    </section>
+
+    <section class="pure-g slider__wrap">
+      <div class="pure-u-22-24 pure-u-lg-16-24 content slider">
+      <div class="slider-container__wrap">
+          <span class="icon-arrow-left slider__arrow--prev"></span>
+          <span class="icon-arrow-right slider__arrow--next"></span>
+        <div class="slides-container">
+          <div class="slide">
+            <div class="slide__content">
+              <img src="../img/parachutes.jpg" alt="" class="pure-img">
+              <h3>Skoki ze spadochronem</h3>
+              <p>
+                Aliquam scelerisque erat sed dolor. Cras metus est, accumsan at libero ac, elementum bibendum nisi. Vivamus vel laoreet orci...
+              </p>
+              <a href="#" class="link__readmore">Czytaj więcej...</a>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="slide__content">
+              <img src="../img/diving.jpg" alt="" class="pure-img">
+              <h3>Nurkowanie</h3>
+              <p>
+                Aliquam scelerisque erat sed dolor. Cras metus est, accumsan at libero ac, elementum bibendum nisi. Vivamus vel laoreet orci...
+              </p>
+              <a href="#" class="link__readmore">Czytaj więcej...</a>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="slide__content">
+              <img src="../img/bike.jpg" alt="" class="pure-img">
+              <h3>Jazda na rowerze</h3>
+              <p>
+                Aliquam scelerisque erat sed dolor. Cras metus est, accumsan at libero ac, elementum bibendum nisi. Vivamus vel laoreet orci...
+              </p>
+              <a href="#" class="link__readmore">Czytaj więcej...</a>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="slide__content">
+              <img src="../img/parachutes.jpg" alt="" class="pure-img">
+              <h3>Skoki ze spadochronem</h3>
+              <p>
+                Aliquam scelerisque erat sed dolor. Cras metus est, accumsan at libero ac, elementum bibendum nisi. Vivamus vel laoreet orci...
+              </p>
+              <a href="#" class="link__readmore">Czytaj więcej...</a>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="slide__content">
+              <img src="../img/diving.jpg" alt="" class="pure-img">
+              <h3>Nurkowanie</h3>
+              <p>
+                Aliquam scelerisque erat sed dolor. Cras metus est, accumsan at libero ac, elementum bibendum nisi. Vivamus vel laoreet orci...
+              </p>
+              <a href="#" class="link__readmore">Czytaj więcej...</a>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="slide__content">
+              <img src="../img/bike.jpg" alt="" class="pure-img">
+              <h3>Jazda na rowerze</h3>
+              <p>
+                Aliquam scelerisque erat sed dolor. Cras metus est, accumsan at libero ac, elementum bibendum nisi. Vivamus vel laoreet orci...
+              </p>
+              <a href="#" class="link__readmore">Czytaj więcej...</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pure-g contact">
+      <div class="google-map"></div>
+      <div class="pure-u-22-24 pure-u-md-20-24 pure-u-lg-12-24 content contact__container">
+            <h2>Kontakt:</h2>
+        <div class="pure-g">
+          
+        <div class="pure-u-1 pure-u-lg-12-24 contact__data">
+            <p>
+              Ut imperdiet ante eros, non venenatis neque scelerisque sed. Nullam volutpat, sem eget volutpat pulvinar, enim enim consequat sem, vel sodales elit sapien vitae ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc elementum justo nec lorem feugiat dictum.
+            </p>
+            <ul class="list-no-decoration contact-data-list">
+                <li class="contact-data__addres">00-000 Warszawa, Polska</li>
+                <li class="contact-data__addres">ul. Przykladowa 48</li>
+                <li>Nr tel.: +48 (22) 999 88 77</li>
+                <li>Nr fax: +48 (22) 999 88 76</li>
+                <li>Nr tel. kom.: +48 999 999 999</li>
+                <li>Email: <a href="mailto:mail@example.com" class="contact-data__email">mail@example.com</a></li>
+            </ul>
+        </div>
+        <div class="pure-u-1 pure-u-lg-12-24 contact__form-container">
+         <form action="#" method="POST" class="form-vertical">
+           <lablel for="name" class="sr-only">Imię i nazwisko</lablel>
+           <input type="text" name="name" id="name" class="contact__input placeholder--dark" placeholder="Imię i nazwisko">
+       
+           <label for="email" class="sr-only">Adres email</label>
+           <input type="email" name="email" id="email" class="contact__input placeholder--dark" placeholder="E-mail">
+       
+           <label for="message" class="sr-only">Treść wiadomości</label>
+           <textarea name="message" id="message" class="contact__input placeholder--dark contact-form__message" placeholder="Wiadomość"></textarea>
+       
+           <button type="submit" class="contact__send">Wyślij wiadomość</button>
+         </form>
+
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="pure-g footer">
+      <div class="pure-u-1">
+        <ul class="footer__data-list">
+          <li class="data-list__item">
+            <a href="#" class="footer__link">Polityka prywatności</a>
+          </li>
+          <li class="data-list__item">
+            <a href="#" class="footer__link">Polityka cookies</a>
+          </li>
+          <li class="data-list__item">Copyrights &copy 2015 efigence S.A.</li>
+          <li class="data-list__item list-item__social">
+            <a ref="#" class="fa fa-facebook-square"></a>
+          </li>
+          <li class="data-list__item list-item__social">
+            <a href="#" class="fa fa-twitter-square"></a>
+          </li>
+        </ul>
+        
+      </div>
+
+
+      
+    </footer>
 
     <script type="text/javascript" src="./js/vendor/jquery-1.11.3.js"></script>
     <script type="text/javascript" src="./js/vendor/handlebars-v4.0.2.js"></script>
+    <script type="text/javascript" src="./js/vendor/slick.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
 </body>
 </html> 

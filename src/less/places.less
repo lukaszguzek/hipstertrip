@@ -1,0 +1,34 @@
+.places__gallery {
+    margin: 0;
+}
+
+.gallery__item {
+    position: relative;
+
+    &:hover > .gallery-item__info-box--wrap {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(red(@base-color-action), green(@base-color-action), blue(@base-color-action), 0.85);
+    }
+}
+
+.gallery-item__info-box--wrap {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    text-align: center;
+    display: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(red(@base-color-action), green(@base-color-action), blue(@base-color-action), 0.2);
+    transition: all 0.4s ease;
+}
+
+.info-box__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

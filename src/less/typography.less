@@ -1,8 +1,15 @@
+.text {
+    color: @base-color-font;
+}
+
+.text--inversed {
+    color: darken(@base-color-font, 98%);
+}
+
 html, body {
     font-family: @base-font-family;
     font-size: @base-font-size;
     line-height: 1.313;
-    color: @base-color-font;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -29,6 +36,10 @@ h2 {
 
 h3 {
     font-size: @base-font-size * 1.618 - 6px;
+}
+
+p {
+    text-indent: 30px;
 }
 
 .controls__text--header,
