@@ -3,33 +3,14 @@
 
     width: 100%;
     boder: 1px solid red;
-
 }
 
 .offer__wrap {
+    .padding;
+
     max-width: 1640px;
     margin: 0 auto;
-    padding: @base-padding-vertical @base-padding-horizontal;
-
-    @media @tablet {
-        padding: @tablet-padding-vertical @tablet-padding-horizontal;
-    }
-
-    @media @desktop {
-        padding: @desktop-padding-vertical @desktop-padding-horizontal;
-    }
-
-    @media @desktop-large {
-        padding: @desktop-large-padding-vertical @desktop-large-padding-horizontal;
-    }
 }
-
-.offer__icons {
-    columns: 2;
-    text-align: center;
-    letter-spacing: 0;
-}
-
 
 .offers-list__item {
     .list-horizontal__item;
@@ -38,3 +19,107 @@
         background-color: @color-background-zebra;
     }
 }
+
+.offer-description__content {
+    .padding--horizontal;
+}
+
+.offer__header {
+    margin: 15px 0;
+}
+
+.offer__location {
+    color: @base-color-font--light;
+}
+
+.offer_stars {
+    color: @base-color-action;
+    margin-top: 5px;
+}
+
+.offer__details-link {
+    .link__readmore;
+    .padding--vertical;
+
+
+    display: inline-block;
+    width: auto;
+    color: @base-color-action;
+
+    @media @desktop {
+        .padding--vertical--double;
+    }
+}
+
+.offer__icons-wrap {
+    .padding--horizontal--small;
+
+    text-align: center;
+    margin-bottom: 15px;
+    letter-spacing: 0;
+    color: @color-offer-icons;
+
+    @media @desktop {
+        columns: 2;
+    }
+}
+
+.offer__details-wrap {
+    .padding--horizontal--small;
+
+}
+
+.offer__rating {
+    font-weight: 400;
+    color: @base-color-action;
+}
+
+.rating__amount {
+    color: @base-color-font--light;
+}
+
+.offer-prices {
+    .margin--vertical;
+    
+    .offer__price--regular,
+    .offer__price--promo {
+        font-family: @secondary-font-family;
+        } 
+    
+    .offer__price--regular,
+    .price__currency {
+        color: @base-color-font--light;
+    }
+
+    .offer__price--regular {
+        font-size: 1.5em;
+        font-weight: 300;
+        text-decoration: line-through;
+    }
+
+    .offer__price--promo {
+        font-size: 2.25em;
+    }
+
+    .offer__residence-time--bold {
+        font-weight: 600;
+    }
+}
+.details__subsection {
+    .padding;
+    text-align: center;
+    margin: 0;
+    
+    @media @desktop {
+
+    }
+
+    
+}
+
+.btn__book {
+    .btn-default;
+    color: @base-color-font;
+}
+
+

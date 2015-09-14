@@ -1,5 +1,7 @@
 .text--inversed {
-    color: darken(@base-color-font, 98%);
+    .text;
+
+    color: darken(@base-color-font, 90%);
 }
 
 html, body {
@@ -10,6 +12,7 @@ html, body {
 
 html, 
 body,
+button,
 .text {
     font-family: @base-font-family;
     font-size: 16px;
@@ -53,6 +56,10 @@ body,
         text-indent: 2em;
     }
 
+    p.large {
+        font-size: 2em;
+    }
+
     li {
         font-size: 0.875em;
     }
@@ -66,10 +73,15 @@ body,
         text-indent: 0;
     }
 
-    a, a:visited {
-        color: inherit;
+    .offer__details-wrap p {
+        text-indent: 0;
+    }
+
+    .h2 {
+        font-size: 1.44em;
     }
 }
+
 
 .controls__text--header,
 .controls__text--text {
