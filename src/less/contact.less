@@ -4,7 +4,10 @@
 }
 
 .contact__container {
-    .padding;
+    .padding--horizontal;
+    .padding--vertical--double;
+
+
     background-color: @color-contact__form-background;
     margin: 0 auto;
     position: relative;
@@ -16,7 +19,7 @@
 }
 
 .contact__header {
-    .padding--vertical;
+    margin-bottom: 32px;
 }
 
 .contact__data {
@@ -51,6 +54,7 @@
 
 .contact__form-container {
     @media @desktop {
+        border-left: 1px solid @color-offer-icons;
         padding-left: @base-padding-horizontal; 
     }
 }

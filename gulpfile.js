@@ -47,15 +47,30 @@ gulp.task('buildCss', ['cleanCss'], function () {
 })
 
 gulp.task('cleanJs', function () {
-    gulp.src('./app/js/*.js')
+    gulp.src('./app/js/main.js')
     .pipe(clean());
 })
 
 gulp.task('buildJs', ['cleanJs'], function () {
-    return gulp.src('./src/js/*.js')
+    return gulp.src('./src/js/main/*.js')
         .pipe(sourcemaps.init())
         /*.pipe(uglify())*/
         .pipe(concat('main.js'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('./app/js/'))
+        .pipe(sync.stream())
+})
+
+gulp.task('cleanJsSubpage', function () {
+    gulp.src('./app/js/subpage.js')
+    .pipe(clean());
+})
+
+gulp.task('buildJsSubpage', ['cleanJsSubpage'], function () {
+    return gulp.src('./src/js/subpage/*.js')
+        .pipe(sourcemaps.init())
+        /*.pipe(uglify())*/
+        .pipe(concat('subpage.js'))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('./app/js/'))
         .pipe(sync.stream())
@@ -73,5 +88,6 @@ gulp.task('watch', function () {
 
     gulp.watch('./src/less/*.less', ['buildCss']);
     gulp.watch(srcHtml, ['buildHtml']);
-    gulp.watch('./src/js/*.js', ['buildJs']);
+    gulp.watch('./src/js/main/*.js', ['buildJs']);
+    gulp.watch('./src/js/subpage/*.js', ['buildJsSubpage']);
 });
