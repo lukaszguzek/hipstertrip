@@ -122,21 +122,21 @@ x.scrollIntoViewIfNeeded(true);
         var paginationButtons = document.getElementsByClassName('pagination__button'),
         activeButtonIndex = (this.currentPage - 1) % this.buttonsLimit;
 
-/*        console.log(activeButtonIndex);
-        if (this.currentPage > 1 || this.currentPage !== this.totalPages) {
+        var l = paginationButtons.length;
+        if (this.currentPage != l + 1) {
+            console.log('nie zadzialam');
             return false;
-        };*/
-
-        var maxPage = Math.min((this.totalPages - this.currentPage), this.buttonsLimit);
-        console.log('total: ' + this.totalPages + ' current: ' + this.currentPage + ' limit: ' + this.buttonsLimit + ' maxPAge: ' + maxPage);
-
-        var off = 0;
-
-        for (var i = paginationButtons.length - 1; i >= 0; i--) {
-            console.log('huj: ' + (this.currentPage + maxPage + off));
-            paginationButtons[i].contexText = this.currentPage + maxPage + off;
-            off--;
         };
+
+        var offset = 0;
+        offset = Math.min(this.totalPages - this.currentPage + 1, this.buttonsLimit);
+        console.log('OFFSET: ' + offset);
+
+
+        for (var i = 0; i < l; i++) {
+            paginationButtons[i].textContent = parseInt(paginationButtons[i].dataset.page) + offset;
+        };
+
 
     },
     addPaginationListeners: function () {
