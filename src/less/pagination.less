@@ -1,44 +1,91 @@
 .pagination__wrap {
     text-align: center;
     background-color: @color-pagination-background;
-    line-height: 100px;
+    line-height: 2.2em;
+
+    @media @tablet {
+        line-height: 100px;
+    }
 }
 
 .pagination {
     .bd;
     margin: 0 auto;
+    width: 100%;
+}
+
+.pagination__buttons-list {
+    .list-horizontal;
+
     display: inline-block;
-    font-size: 0;
-
+    width: auto;
 }
 
-.pagination__link--prev {
-    margin-right: 80px;
-}
-
-.pagination__link--next {
-    margin-left: 80px;
-}
-
-.pagination__link--prev, 
-.pagination__link--next {
-    .text;
-    color: @base-color-font;
-}
-
-.pagination__icon:first-child:before {
-    padding-left: 10px;
-    padding-right: 10px;
+.buttons-list__item {
+    display: inline-block;
+    margin: 0;
 }
 
 .pagination__button {
-    .text;
-
+    margin: 0;
     padding: 5px 10px;
-    cursor: pointer;
-    display: inline;
+
+    border: none;
+    background: none;
 }
+
 
 .pagination__button--active {
     background-color: @base-color-action;
+}
+
+.buttons-next-prev__wrap {
+    .text;
+
+    display: inline-block;
+    width: auto;
+    transition: all 0.6s ease;
+
+    &:hover {
+        color: @base-color-action--light;
+        cursor: pointer;
+    }
+}
+.buttons-next-prev__wrap--inactive {
+    opacity: 0.4;
+    cursor: default;
+
+    &:hover {
+        color: @base-color-font;
+    }
+}
+.pagination_button-prev,
+.pagination_button-next {
+    display: none;
+    color: inherit;
+        
+    @media @tablet {
+        display: inline-block;
+        text-decoration: underline;
+        background: none;
+        border: none;
+        padding: 5px 10px;
+    }
+}
+
+.pagination_button-prev {
+    @media @desktop {
+        padding-right: 40px;
+    }
+}
+
+.pagination_button-next {
+    @media @desktop {
+        padding-left: 40px;
+    }
+}
+
+
+.pagination__icon:before {
+    color: inherit;
 }

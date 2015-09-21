@@ -8,6 +8,11 @@
         return result;
     });
 
+    Handlebars.registerHelper('increase', function (value, step) {
+        return value + step;
+    });
+
+
     Handlebars.registerHelper('scoreDescription', function (score) {
         var description = '';
 
@@ -42,3 +47,4 @@
         return priceRegular === pricePromo;
     });
 })();
+

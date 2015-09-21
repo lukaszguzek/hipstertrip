@@ -10,7 +10,7 @@
   <link rel="stylesheet" type="text/css" href="css/vendor/icomoon.css">
   <link rel="stylesheet" type="text/css" href="./css/vendor/font-awesome-4.4.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="./css/main.css">
-  <script id="places-template" type="text/x-handlebars-template">
+  <script id="offers-template" type="text/x-handlebars-template">
         {{#each places}}
           <li class="offers-list__item">
             <div class="offer__wrap pure-g">
@@ -82,9 +82,34 @@
                     </div>
                 </div>
               </div>
-            </div> <!-- offer wrap -->
+            </div>
           </li>
         {{/each}}
+  </script>
+
+    <script id="pagination-button" type="text/x-handlebars-template">
+      {{#each buttonsCount}}
+       <li class="buttons-list__item">
+          <button class="pagination__button" data-page="{{increase @index 1}}">{{increase @index 1}}</button>
+        </li>
+        {{/each}}
+  </script>
+
+  <script id="offers-template--error" type="text/x-handlebars-template">
+   <div class="pure-g offers__error-message">
+    <div class="pure-u-4-24">
+      <img class="pure-img" src="./img/404-img.png" alt="Ups...">
+    </div>
+    <div class="pure-u-10-24">
+      <h2 class="text--error">{{status}} - {{statusText}}</h2>
+      <p>Nie udało się pobrać listy ofert.</p>
+      <p>Stajemy na głowie, żeby to naprawić.</p>
+      <p>Możesz spróbować odświeżyć stronę.</p>
+      <p>Jeśli problem się powtórzy, skontaktuj się z nami, pod adresem:
+        <a href="mailto:support@hipstertrip.com"> support@hipstertrip.com</a>
+      </p>
+    </div>
+  </div>
   </script>
 
 
@@ -153,7 +178,7 @@
         </ul>
       </nav>
     </section>
-    
+
     <section class="pure-g">
       <div class="pure-u-1">
         <img src="./img/rewal3.jpg" alt="" class="pure-img">
@@ -167,12 +192,17 @@
 
       <div class="pure-u-1 pagination__wrap">
         <nav class="pagination">
-          <a href="#" class="pagination__link--prev"><span class="fa fa-chevron-circle-left pagination__icon"></span>poprzednia strona</a>
-          <buttom class="pagination__button">1</buttom>
-          <buttom class="pagination__button">1</buttom>
-          <buttom class="pagination__button">1</buttom>
-          <buttom class="pagination__button">1</buttom>
-         <a href="#" class="pagination__link--next">następna strona<span class="fa fa-chevron-circle-right pagination__icon"></span></a>
+          <div class="buttons-next-prev__wrap hidden">
+            <span class="fa fa-chevron-circle-left pagination__icon"></span>
+            <button class="pagination_button-prev">poprzednia strona</button>
+          </div>
+          <ul class="pagination__buttons-list" id="pagination__buttons-list">
+
+          </ul>
+          <div class="buttons-next-prev__wrap hidden">
+            <button class="pagination_button-next">następna strona</button>
+            <span class="fa fa-chevron-circle-right pagination__icon"></span>
+          </div>
         </nav>
       </div>
       </div>
