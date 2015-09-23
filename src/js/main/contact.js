@@ -1,4 +1,4 @@
-'use strinct';
+'use strict';
 
 var contactForm = document.getElementById('contact-form');
 contactForm.scrollIntoViewIfNeeded(true);
