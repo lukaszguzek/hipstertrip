@@ -17,7 +17,7 @@ offersData = {
 offersState = {
     totalPages: null,
     currentPage: 1,
-    maxNumberOfButtons: 3,
+    maxNumberOfButtons: 10,
     numberOfVisibleButtons: null,
     visiblePages: [],
 
