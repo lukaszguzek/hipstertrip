@@ -15,6 +15,7 @@
  </head> 
   <body class="text">
     <section class="pure-g statusbar">
+      <header class="hidden"><h2>Zaloguj się</h2></header>
       <nav class="pure-u-1-1">
           <ul class="statusbar__menu">
             <li class="statusbar-menu__item">
@@ -307,19 +308,31 @@
             </ul>
         </div>
         <div class="pure-u-1 pure-u-lg-12-24 contact__form-container">
-         <form action="#" method="POST" class="form-vertical">
+         <form action="#" method="POST" class="form-vertical" id="contact-form">
+          <div class="contact__input-wrap">
            <lablel for="name" class="sr-only">Imię i nazwisko</lablel>
            <input type="text" name="name" id="name" class="contact__input placeholder--dark" placeholder="Imię i nazwisko">
-       
+           <div class="contact__error-message hidden" data-field="name"><i class="fa fa-exclamation icon"></i><span></span></div>
+          </div>
+          <div class="contact__input-wrap">
            <label for="email" class="sr-only">Adres email</label>
            <input type="email" name="email" id="email" class="contact__input placeholder--dark" placeholder="E-mail">
-       
+           <div class="contact__error-message hidden" data-field="email"><i class="fa fa-exclamation icon"></i><span></span></div>
+          </div>
+          <div class="contact__input-wrap">
            <label for="message" class="sr-only">Treść wiadomości</label>
            <textarea name="message" id="message" class="contact__input placeholder--dark contact-form__message" placeholder="Wiadomość"></textarea>
-       
-           <button type="submit" class="contact__send">Wyślij wiadomość</button>
+            <div class="contact__error-message hidden" data-field="message"><i class="fa fa-exclamation icon"></i><span></span></div>
+          </div>       
+             <button type="submit" class="contact__send" id="contact__send">Wyślij wiadomość</button>
          </form>
-
+        <div class="contact__error-description hidden">
+          <p class="contact__send-error-text">Przepraszamy, nie udało się połączyć z serwerem (kod błędu:
+           <span id="error-text__code"></span>)
+         </p>
+          <p class="contact__send-error-text">Spróbuj ponownie, lub skontaktuj się z nami pod adresem:
+           <a href="mailto:support@hipstertrip.pl" class="contact-data__email">support@hipstertrip.pl</a></p>
+        </div>
         </div>
         </div>
       </div>

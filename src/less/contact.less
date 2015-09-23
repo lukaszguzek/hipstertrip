@@ -60,10 +60,24 @@
 }
 
 .contact__input {
-    .form-input;
     
     &:focus {
         outline: 2px solid @base-color-action;
+    }
+}
+
+.contact__input-wrap {
+    position: relative;
+    margin-bottom: @base-padding-vertical * 2;
+}
+
+input.contact__input--error,
+textarea.contact__input--error {
+    border: 3px solid @color-error;
+    color: @color-error;
+
+    &:focus {
+        outline: none;
     }
 }
 
@@ -76,11 +90,49 @@
 }
 
 .contact__send {
+    float: none;
     background-color: @base-color-action;
 
     &:hover {
         background-color: @base-color-action--light;
     }
+}
+
+.contact__send--error {
+    background-color: @color-error;
+
+    &:hover {
+        background-color: ligthen(@color-error, 10%);
+    }
+}
+
+.contact__send--success {
+    background-color: @color-success;
+    color: @base-color-font;
+
+    &:hover {
+        background-color: lighten(@color-success, 10%);
+    }
+}
+
+.contact__error-message {
+    position: absolute;
+    z-index: 60;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    font-size: 0.8em;
+    color: @color-error;
+}
+
+.contact__error-description {
+    border: 3px solid @color-error;
+    margin-top: @desktop-padding-vertical;
+    padding: @base-padding-vertical @base-padding-horizontal;
+
+}
+p.contact__send-error-text {
+    text-indent: 0;
 }
 
 
