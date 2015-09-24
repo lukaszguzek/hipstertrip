@@ -39,7 +39,6 @@ contactState = {
             if (that.checkForResponseErrors(data)) {
                 that.parseResponseErrors(data);
             } else {
-                console.log(data);
                 contactView.showSendError(data.status);
             }
         })

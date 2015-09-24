@@ -1,214 +1,203 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-  <meta charset="UTF-8">
-  <title>Hipster trip</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="css/vendor/normalize.css">
-  <link rel="stylesheet" href="css/vendor/pure-grid.css">
-  <link rel="stylesheet" type="text/css" href="css/vendor/icomoon.css">
-  <link rel="stylesheet" type="text/css" href="./css/vendor/font-awesome-4.4.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="./css/main.css">
-  <script id="offers-template" type="text/x-handlebars-template">
-        {{#each places}}
-          <li class="offers-list__item">
-            <div class="offer__wrap pure-g">
-              <div class="pure-u-1 pure-u-md-11-24 pure-u-lg-8-24 pure-u-xl-8-24">
-                <img src="{{image}}" alt="" class="pure-img img-center">
+  <head>
+    <meta charset="UTF-8">
+    <title>Hipster trip</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/vendor/normalize.css">
+    <link rel="stylesheet" href="css/vendor/pure-grid.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor/icomoon.css">
+    <link rel="stylesheet" type="text/css" href="./css/vendor/font-awesome-4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <script id="offers-template" type="text/x-handlebars-template">
+    {{#each places}}
+    <li class="offers-list__item">
+      <div class="offer__wrap pure-g">
+        <div class="pure-u-1 pure-u-md-11-24 pure-u-lg-8-24 pure-u-xl-8-24">
+          <img src="{{image}}" alt="" class="pure-img img-center">
+        </div>
+        <div class="pure-u-1 pure-u-md-11-24 pure-u-lg-8-24 pure-u-xl-8-24 text--inversed">
+          <div class="offer-description__content">
+            <header class="offer__header">
+              <h2 class="offer__name">{{name}}</h2>
+              <span class="offer__location">{{district}}</span>
+              <div class="offer_stars">
+                {{#times starts '<span class="fa fa-star icon"></span>'}}
+                {{/times}}
               </div>
-
-              <div class="pure-u-1 pure-u-md-11-24 pure-u-lg-8-24 pure-u-xl-8-24 text--inversed">
-                <div class="offer-description__content">
-                  <header class="offer__header">
-                    <h2 class="offer__name">{{name}}</h2>
-                    <span class="offer__location">{{district}}</span>
-                    <div class="offer_stars">
-                      {{#times starts '<span class="fa fa-star icon"></span>'}}
-                      {{/times}}
-                    </div>
-                  </header>
-
-                  <p class="offer_description"> {{description}}</p>
-
-                  <p class="offer__description hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ad, libero dolore vero, ipsa, reiciendis accusamus nemo commodi quibusdam eos pariatur fuga? Architecto maiores nulla numquam officiis eligendi odio sapiente rem modi quis deserunt veniam, repellendus consectetur eum corporis. Provident obcaecati, illum. Magnam, recusandae perspiciatis.</p>
-                  <p class="offer__description hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore velit non, quidem dolorem incidunt perferendis ipsam, similique laborum ratione ipsum magnam, aliquid. Dolorum culpa fugit, eaque obcaecati ut. Libero ea omnis, ducimus sit nulla, facilis. Quia minus explicabo necessitatibus accusamus, vel non laudantium? Quaerat sapiente quas aspernatur laboriosam pariatur tenetur et, perspiciatis architecto temporibus ut veniam illo, est, in magni.</p>
-
-                  <a href="#" class="offer__details-link">Szczegóły</a>
-                </div>
-              </div>
-
-              <div class="pure-u-1 pure-u-md-2-24 pure-u-lg-2-24 offer__icons-wrap">
-                {{#if wifi}}
-                <span class="fa fa-wifi offer__icon" title="Dostęp do wifi"></span>
-                {{/if}}
-                 {{#if paypas}}
-                  <span class="fa fa-credit-card offer__icon" title="Możliwość zapłaty kartą"></span>
-                 {{/if}}
-                 {{#if food}}
-                  <span class="fa fa-cutlery offer__icon" title="Restauracja"></span>
-                 {{/if}}
-                 {{#if swimming}}
-                  <span class="fa fa-life-ring offer__icon" title="Basen dla gości"></span>
-                 {{/if}}
-                 {{#if parking}}
-                  <span class="fa fa-car offer__icon" title="Parking dla gości"></span>
-                 {{/if}}
-                 {{#if airport}}
-                  <span class="fa fa-plane offer__icon" title="Lotnisko w pobliżu"></span>
-                 {{/if}}
-                 {{#if tv}}
-                  <span class="fa fa-desktop offer__icon" title="Telewizja kablowa"></span>
-                {{/if}}
-              </div>
-
-              <div class="pure-u-1 pure-u-lg-6-24 pure-u-xl-6-24 text--inversed offer__details-wrap">
-                <div class="pure-g">
-                  <div class="pure-u-1 pure-u-lg-1 details__subsection">
-                    <h3 class="offer__rating">{{scoreDescription score}}</h3>
-                    <p class="rating__amount">Ocena na podstawie {{opinion_count}} opinii</p>
-                  </div>
-                  <div class="pure-u-1 pure-u-lg-1 details__subsection offer-prices">
-                  {{#if (isEqual oldprice price)}}
-                     <p class="offer__price--regular not-visible">{{oldprice}} PLN</p>
-                    {{else}}
-                     <p class="offer__price--regular">{{oldprice}} PLN</p>
-                    {{/if}}
-                    <p class="offer__price--promo">{{price}} <span class="price__currency">PLN</span>  </p>
-                    <p class="offer__residence-time">Cena za <span class="offer__residence-time--bold">3 noce</span></p>
-                  </div>
-                    <div class="pure-u-1 details__subsection">
-                      <button class="text--inversed btn__book">Zarezerwuj teraz</button>
-                    </div>
-                </div>
-              </div>
+            </header>
+            <p class="offer_description"> {{description}}</p>
+            <p class="offer__description hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ad, libero dolore vero, ipsa, reiciendis accusamus nemo commodi quibusdam eos pariatur fuga? Architecto maiores nulla numquam officiis eligendi odio sapiente rem modi quis deserunt veniam, repellendus consectetur eum corporis. Provident obcaecati, illum. Magnam, recusandae perspiciatis.</p>
+            <p class="offer__description hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore velit non, quidem dolorem incidunt perferendis ipsam, similique laborum ratione ipsum magnam, aliquid. Dolorum culpa fugit, eaque obcaecati ut. Libero ea omnis, ducimus sit nulla, facilis. Quia minus explicabo necessitatibus accusamus, vel non laudantium? Quaerat sapiente quas aspernatur laboriosam pariatur tenetur et, perspiciatis architecto temporibus ut veniam illo, est, in magni.</p>
+            <a href="#" class="offer__details-link">Szczegóły</a>
+          </div>
+        </div>
+        <div class="pure-u-1 pure-u-md-2-24 pure-u-lg-2-24 offer__icons-wrap">
+          {{#if wifi}}
+          <span class="fa fa-wifi offer__icon" title="Dostęp do wifi"></span>
+          {{/if}}
+          {{#if paypas}}
+          <span class="fa fa-credit-card offer__icon" title="Możliwość zapłaty kartą"></span>
+          {{/if}}
+          {{#if food}}
+          <span class="fa fa-cutlery offer__icon" title="Restauracja"></span>
+          {{/if}}
+          {{#if swimming}}
+          <span class="fa fa-life-ring offer__icon" title="Basen dla gości"></span>
+          {{/if}}
+          {{#if parking}}
+          <span class="fa fa-car offer__icon" title="Parking dla gości"></span>
+          {{/if}}
+          {{#if airport}}
+          <span class="fa fa-plane offer__icon" title="Lotnisko w pobliżu"></span>
+          {{/if}}
+          {{#if tv}}
+          <span class="fa fa-desktop offer__icon" title="Telewizja kablowa"></span>
+          {{/if}}
+        </div>
+        <div class="pure-u-1 pure-u-lg-6-24 pure-u-xl-6-24 text--inversed offer__details-wrap">
+          <div class="pure-g">
+            <div class="pure-u-1 pure-u-lg-1 details__subsection">
+              <h3 class="offer__rating">{{scoreDescription score}}</h3>
+              <p class="rating__amount">Ocena na podstawie {{opinion_count}} opinii</p>
             </div>
-          </li>
-        {{/each}}
-  </script>
-
+            <div class="pure-u-1 pure-u-lg-1 details__subsection offer-prices">
+              {{#if (isEqual oldprice price)}}
+              <p class="offer__price--regular not-visible">{{oldprice}} PLN</p>
+              {{else}}
+              <p class="offer__price--regular">{{oldprice}} PLN</p>
+              {{/if}}
+              <p class="offer__price--promo">{{price}} <span class="price__currency">PLN</span>  </p>
+              <p class="offer__residence-time">Cena za <span class="offer__residence-time--bold">3 noce</span></p>
+            </div>
+            <div class="pure-u-1 details__subsection">
+              <button class="text--inversed btn__book">Zarezerwuj teraz</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    {{/each}}
+    </script>
     <script id="pagination-button" type="text/x-handlebars-template">
-      {{#each buttonsCount}}
-       <li class="buttons-list__item">
-          <button class="pagination__button" data-page="{{increase @index 1}}">{{increase @index 1}}</button>
-        </li>
-        {{/each}}
-  </script>
-
-  <script id="offers-template--error" type="text/x-handlebars-template">
-   <div class="pure-g offers__error-message">
-    <div class="pure-u-4-24">
-      <img class="pure-img" src="./img/404-img.png" alt="Ups...">
+    {{#each buttonsCount}}
+    <li class="buttons-list__item">
+      <button class="pagination__button" data-page="{{increase @index 1}}">{{increase @index 1}}</button>
+    </li>
+    {{/each}}
+    </script>
+    <script id="offers-template--error" type="text/x-handlebars-template">
+    <div class="pure-g offers__error-message">
+      <div class="pure-u-4-24">
+        <img class="pure-img" src="./img/404-img.png" alt="Ups...">
+      </div>
+      <div class="pure-u-10-24">
+        <h2 class="text--error">{{status}} - {{statusText}}</h2>
+        <p>Nie udało się pobrać listy ofert.</p>
+        <p>Stajemy na głowie, żeby to naprawić.</p>
+        <p>Możesz spróbować odświeżyć stronę.</p>
+        <p>Jeśli problem się powtórzy, skontaktuj się z nami, pod adresem:
+          <a href="mailto:support@hipstertrip.com"> support@hipstertrip.com</a>
+        </p>
+      </div>
     </div>
-    <div class="pure-u-10-24">
-      <h2 class="text--error">{{status}} - {{statusText}}</h2>
-      <p>Nie udało się pobrać listy ofert.</p>
-      <p>Stajemy na głowie, żeby to naprawić.</p>
-      <p>Możesz spróbować odświeżyć stronę.</p>
-      <p>Jeśli problem się powtórzy, skontaktuj się z nami, pod adresem:
-        <a href="mailto:support@hipstertrip.com"> support@hipstertrip.com</a>
-      </p>
-    </div>
-  </div>
-  </script>
-
-
- </head> 
- <body>
+    </script>
+  </head>
+  <body>
+    <h1 class="sr-only">HipsterTrip</h1>
+    
     <section class="pure-g statusbar">
+      <h2 class="sr-only">Status bar</h2>
       <nav class="pure-u-1-1">
-          <ul class="statusbar__menu">
-            <li class="statusbar-menu__item">
-              <a href="#" class="statusbar-menu__link">Zarejestruj się</a>
-            </li>
-            <li class="statusbar-menu__item">
-              <a href="#" class="statusbar-menu__link">
-                <span class="fa fa-unlock icon"></span>Zaloguj się
-              </a>
-            </li>
-            <li class="statusbar-menu__item">
-              <a href="#" class="statusbar-menu__link"><span class="fa fa-facebook icon"></span>Połącz przez FB</a>
-            </li>
-          </ul>
+        <h2 class="sr-only">Zaloguj lub zarejestruj się</h2>
+        <ul class="statusbar__menu">
+          <li class="statusbar-menu__item">
+            <a href="#" class="statusbar-menu__link">Zarejestruj się</a>
+          </li>
+          <li class="statusbar-menu__item">
+            <a href="#" class="statusbar-menu__link">
+              <span class="fa fa-unlock icon"></span>Zaloguj się
+            </a>
+          </li>
+          <li class="statusbar-menu__item">
+            <a href="#" class="statusbar-menu__link"><span class="fa fa-facebook icon"></span>Połącz przez FB</a>
+          </li>
+        </ul>
       </nav>
     </section>
-
     <section class="pure-g">
+      <h1 class="sr-only">Główne menu</h1>
       <nav class="pure-u-1 pure-u-md-1 pure-u-lg-1 main-nav clearfix">
+        <h2 class="sr-only">Nawigacja</h2>
         <div class="pull-right">
           <span class="fa fa-bars hamburger-button"></span>
         </div>
-        <a href="/" class="text-logo__link pull-left">
-          <h1 class="text-logo">
-            <span class="fa fa-map-marker icon"></span>
-            <span class="text-logo--bold">Hipster</span>Trip
-          </h1>
-         </a>
+        <a href="/" class="text-logo__link text-logo pull-left">
+          <span class="fa fa-map-marker icon"></span>
+          <span class="text-logo--bold">Hipster</span>Trip
+        </a>
         <ul class="menu-horizontal main-menu main-menu--collapsed">
-          <div class="pure-u-1 pure-u-lg-4-24 nav-form__wrap">
-            <li class="main-menu__item">
-              <form action="#" method="POST" name="search-form" class="nav-form">
-                <div class="searchbox__wrap">
-                  <span class="fa fa-search searchbox__icon"></span>
-                  <input type="search" name="searchbox" id="searchbox" class="form-input nav-form__searchbox" placeholder="Szukaj...">
-                </div>
-              </form>
-            </li>
-          </div>
-          <div class="main-menu__item--wrap">
-            <li class="main-menu__item">
+          <li class="pure-u-1 pure-u-lg-4-24 main-menu__item nav-form__wrap">
+            <form action="#" method="POST" name="search-form" class="nav-form">
+              <div class="searchbox__wrap">
+                <span class="fa fa-search searchbox__icon"></span>
+                <input type="search" name="searchbox" id="searchbox" class="form-input nav-form__searchbox" placeholder="Szukaj...">
+              </div>
+            </form>
+          </li>
+          <li class="main-menu__item">
+            <div class="main-menu__link__wrap">
               <a href="#" class="main-menu__link">Co to jest?</a>
-            </li>
-          </div>
-          <div class="main-menu__item--wrap">
-            <li class="main-menu__item">
+            </div>
+          </li>
+          <li class="main-menu__item">
+            <div class="main-menu__link__wrap">
               <a href="#" class="main-menu__link">Aktualności</a>
-            </li>
-          </div>
-          <div class="main-menu__item--wrap">
-            <li class="main-menu__item">
+            </div>
+          </li>
+          <li class="main-menu__item">
+            <div class="main-menu__link__wrap">
               <a href="/places.html" class="main-menu__link">Miejscówki</a>
-            </li>
-          </div>
-          <div class="main-menu__item--wrap">
-            <li class="main-menu__item">
+            </div>
+          </li>
+          <li class="main-menu__item">
+            <div class="main-menu__link__wrap">
               <a href="#" class="main-menu__link">Kontakt</a>
-            </li>
-          </div>
+            </div>
+          </li>
         </ul>
       </nav>
     </section>
-
-    <section class="pure-g">
+    <div class="pure-g">
       <div class="pure-u-1">
         <img src="./img/rewal3.jpg" alt="" class="pure-img">
       </div>
-    </section>
-  
+    </div>
+    
     <section class="pure-g text--inversed">
+      <h1 class="sr-only">Lista ofert</h1>
       <div class="pure-u-1">
         <ul class="offers-list" id="offers">
         </ul>
-
-      <div class="pure-u-1 pagination__wrap">
-        <nav class="pagination">
-          <div class="buttons-next-prev__wrap hidden">
-            <span class="fa fa-chevron-circle-left pagination__icon"></span>
-            <button class="pagination_button-prev" rel="prev">poprzednia strona</button>
-          </div>
-          <ul class="pagination__buttons-list" id="pagination__buttons-list">
-
-          </ul>
-          <div class="buttons-next-prev__wrap hidden">
-            <button class="pagination_button-next" rel="next">następna strona</button>
-            <span class="fa fa-chevron-circle-right pagination__icon"></span>
-          </div>
-        </nav>
-      </div>
+        <div class="pure-u-1 pagination__wrap">
+          <nav class="pagination">
+            <h1 class="sr-only">Nawiguj między ofertami</h1>
+            <div class="buttons-next-prev__wrap hidden">
+              <span class="fa fa-chevron-circle-left pagination__icon"></span>
+              <button class="pagination_button-prev" rel="prev">poprzednia strona</button>
+            </div>
+            <ul class="pagination__buttons-list" id="pagination__buttons-list">
+            </ul>
+            <div class="buttons-next-prev__wrap hidden">
+              <button class="pagination_button-next" rel="next">następna strona</button>
+              <span class="fa fa-chevron-circle-right pagination__icon"></span>
+            </div>
+          </nav>
+        </div>
       </div>
     </section>
-  
-
+    
     <footer class="pure-g footer">
       <div class="pure-u-1">
         <ul class="footer__data-list">
@@ -218,7 +207,7 @@
           <li class="data-list__item">
             <a href="#" class="footer__link">Polityka cookies</a>
           </li>
-          <li class="data-list__item"><span>Copyrights &copy 2015 efigence S.A.</span></li>
+          <li class="data-list__item"><span>Copyrights &copy; 2015 efigence S.A.</span></li>
           <li class="data-list__item list-item__social">
             <a href="#" class="fa fa-facebook-square social-icon__link"></a>
           </li>
@@ -228,11 +217,9 @@
         </ul>
       </div>
     </footer>
-
-  <script type="text/javascript" src="./js/vendor/jquery-1.11.3.js"></script>
-  <script type="text/javascript" src="./js/vendor/handlebars-v4.0.2.js"></script>
-  <script src="http://maps.googleapis.com/maps/api/js"></script>
-  <script type="text/javascript" src="./js/subpage.js"></script>
-  <body class="text">
+    <script type="text/javascript" src="./js/vendor/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="./js/vendor/handlebars-v4.0.2.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script type="text/javascript" src="./js/subpage.js"></script>
   </body>
-  </html>
+</html>

@@ -40,15 +40,14 @@ ________________________________________________________________________________
 }
 
 /* text-logo */
-.text-logo {
-    line-height: @main-menu-height;
-}
-
 a.text-logo__link,
 a.text-logo__link:hover,
 a.text-logo__link:visited {
     .margin--horizontal;
     
+    font-family: @secondary-font-family;
+    font-size: 32px;
+    line-height: @main-menu-height;
     color: @base-color-font;
     text-decoration: none;
 }
@@ -82,20 +81,6 @@ a.text-logo__link:visited {
 
 }
 
-.main-menu__item--wrap {
-    @media @desktop {
-        background-color: transparent;
-        display: inline-block;
-        max-height: @main-menu-height;
-        border-bottom: 4px solid transparent;
-        transition: all 0.6s ease;
-
-        &:hover {
-            border-bottom: 4px solid @base-color-action--light;
-        }
-    }
-}
-
 .main-menu__item {
     .padding;
     .menu-horizontal__item;
@@ -109,7 +94,7 @@ a.text-logo__link:visited {
     @media @desktop {
         display: inline-block;
         width: auto;
-        padding: 0 @desktop-padding-horizontal;
+        padding: 0;
         text-align: center;
         border: none;
         background: transparent;
@@ -120,12 +105,34 @@ a.text-logo__link:visited {
     }
 }
 
+.main-menu__link__wrap {
+    .text;
+    font-family: @secondary-font-family;
+    font-size: 1.1em;
+    padding: 0 20px;
+
+    @media @desktop {
+        font-size: 1.2em;
+        background-color: transparent;
+        display: inline-block;
+        max-height: @main-menu-height;
+        border-bottom: 4px solid transparent;
+        transition: all 0.6s ease;
+
+        &:hover {
+            border-bottom: 4px solid @base-color-action--light;
+        }
+    }
+}
+
 .main-menu__link {
+    display: inline-block;
     cursor: pointer;
-    font-size: 1.2em;
-    text-decoration: none;
+    font-size: 1.1em;
     font-weight: 300;
+    text-decoration: none;
     color: @base-color-font;
+    transition: color 0.6s ease;
 
     &:hover {
         color: @base-color-action--light;
@@ -147,6 +154,7 @@ a.text-logo__link:visited {
         width: 300px;
         float: right;
         padding: 0 0;
+        margin-right: @desktop-padding-horizontal + 10px;
    }
 }
 
