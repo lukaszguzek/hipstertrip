@@ -9,13 +9,9 @@ var gulp = require('gulp'),
     less = require('gulp-less'),
     sync = require('browser-sync').create(),
     prefix = require('gulp-autoprefixer'),
-    srcCss = './src/css/',
-    srcJs = './src/js/',
     srcHtml = './src/*.html',
-    appFolder = './app/',
     appHtml = './app/',
-    targetCss = './app/css/',
-    targetJs = './app/js';
+    targetCss = './app/css/';
 
 gulp.task('cleanHtml', function () {
     return gulp.src('./app/*.html', {read: false})
@@ -52,10 +48,10 @@ gulp.task('cleanJs', function () {
 })
 
 gulp.task('buildJs', ['cleanJs'], function () {
-    return gulp.src('./src/js/main/*.js')
+    return gulp.src(['./src/js/main/*.js', './src/js/common/*.js'])
         .pipe(sourcemaps.init())
-        /*.pipe(uglify())*/
         .pipe(concat('main.js'))
+        .pipe(uglify())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('./app/js/'))
         .pipe(sync.stream())
@@ -67,10 +63,10 @@ gulp.task('cleanJsSubpage', function () {
 })
 
 gulp.task('buildJsSubpage', ['cleanJsSubpage'], function () {
-    return gulp.src('./src/js/subpage/*.js')
+    return gulp.src(['./src/js/subpage/*.js','./src/js/common/*.js'])
         .pipe(sourcemaps.init())
-        /*.pipe(uglify())*/
         .pipe(concat('subpage.js'))
+        .pipe(uglify())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('./app/js/'))
         .pipe(sync.stream())
