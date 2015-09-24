@@ -5,8 +5,8 @@ var offersList = {};
 offersList = {
     totalPages: null,
     currentPage: 1,
-    baseUrl: '//camp.efigence.com/camp/api/places?page=',
-    buttonsLimit: 3,
+    baseUrl: 'http://camp.efigence.com/camp/api/places?page=',
+    buttonsLimit: 10,
     activeButtonIndex: 0,
     init: function () {
         this.getData()

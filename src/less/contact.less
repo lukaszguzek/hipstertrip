@@ -93,8 +93,10 @@ textarea.contact__input--error {
     float: none;
     background-color: @base-color-action;
 
-    &:hover {
+    &:hover, 
+    &:focus {
         background-color: @base-color-action--light;
+        outline: 3px solid @header-border;
     }
 }
 
